@@ -6,7 +6,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #ffffff; padding: 12px; }
+  html, body { height: auto; overflow: hidden; background: #ffffff; }
+  body { padding: 12px; }
   .stamp-outer { position: relative; background: #ffffff; padding: 12px; border-radius: 4px; width: 100%; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10)); }
   .stamp-outer::before {
     content: '';
@@ -26,13 +27,18 @@
   .stamp-inner { background: #fdf0ea; border-radius: 2px; padding: 24px 28px 20px; position: relative; z-index: 1; }
   .stamp-qmark { font-size: 56px; line-height: 1; color: #c8714c; font-family: Georgia, serif; opacity: 0.2; position: absolute; top: 6px; right: 16px; }
   .stamp-text { font-family: 'Bad Script', cursive; font-size: 18px; line-height: 1.8; color: #4a1f0e; text-align: left; margin: 0 0 16px; }
+  @media (max-width: 480px) {
+    .stamp-text { font-size: 15px; line-height: 1.7; }
+    .stamp-inner { padding: 18px 20px 16px; }
+    .stamp-qmark { font-size: 44px; }
+  }
   .stamp-footer { display: flex; align-items: center; gap: 10px; }
   .stamp-line { flex: 1; height: 1px; background: #f0c4a8; }
   .stamp-attr { font-size: 11px; font-weight: 700; color: #c8714c; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; font-family: -apple-system, 'Segoe UI', sans-serif; }
 </style>
 </head>
 <body>
-<div class="stamp-outer">
+<div class="stamp-outer" id="stamp">
   <div class="stamp-inner">
     <div class="stamp-qmark">"</div>
     <p class="stamp-text">The goal is simple: to create a predictable, reliable standard of comfort and pain management for every child, in every setting, every time.</p>
@@ -43,5 +49,14 @@
     </div>
   </div>
 </div>
+<script>
+  function sendHeight() {
+    const h = document.getElementById('stamp').getBoundingClientRect().height + 28;
+    window.parent.postMessage({ type: 'setHeight', height: h }, '*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  new ResizeObserver(sendHeight).observe(document.getElementById('stamp'));
+</script>
 </body>
 </html>
