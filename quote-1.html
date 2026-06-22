@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
-  body { margin: 0; padding: 16px; background: #ffffff; }
-  .stamp-wrap { font-family: -apple-system, 'Segoe UI', sans-serif; display: flex; justify-content: center; width: 100%; }
-  .stamp-outer { position: relative; background: #ffffff; padding: 14px; border-radius: 4px; width: 100%; max-width: 560px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10)); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #ffffff; padding: 12px; }
+  .stamp-outer { position: relative; background: #ffffff; padding: 12px; border-radius: 4px; width: 100%; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10)); }
   .stamp-outer::before {
     content: '';
     position: absolute;
@@ -24,25 +23,23 @@
     pointer-events: none;
     z-index: 2;
   }
-  .stamp-inner { background: #fdf0ea; border-radius: 2px; padding: 28px 32px 24px; position: relative; z-index: 1; }
-  .stamp-qmark { font-size: 64px; line-height: 1; color: #c8714c; font-family: Georgia, serif; opacity: 0.2; position: absolute; top: 8px; right: 20px; }
-  .stamp-text { font-family: 'Bad Script', cursive; font-size: 19px; line-height: 1.85; color: #4a1f0e; margin: 0 0 18px; }
+  .stamp-inner { background: #fdf0ea; border-radius: 2px; padding: 24px 28px 20px; position: relative; z-index: 1; }
+  .stamp-qmark { font-size: 56px; line-height: 1; color: #c8714c; font-family: Georgia, serif; opacity: 0.2; position: absolute; top: 6px; right: 16px; }
+  .stamp-text { font-family: 'Bad Script', cursive; font-size: 18px; line-height: 1.8; color: #4a1f0e; text-align: left; margin: 0 0 16px; }
   .stamp-footer { display: flex; align-items: center; gap: 10px; }
   .stamp-line { flex: 1; height: 1px; background: #f0c4a8; }
   .stamp-attr { font-size: 11px; font-weight: 700; color: #c8714c; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; font-family: -apple-system, 'Segoe UI', sans-serif; }
 </style>
 </head>
 <body>
-<div class="stamp-wrap">
-  <div class="stamp-outer">
-    <div class="stamp-inner">
-      <div class="stamp-qmark">"</div>
-      <p class="stamp-text">The goal is simple: to create a predictable, reliable standard of comfort and pain management for every child, in every setting, every time.</p>
-      <div class="stamp-footer">
-        <div class="stamp-line"></div>
-        <span class="stamp-attr">Physician</span>
-        <div class="stamp-line"></div>
-      </div>
+<div class="stamp-outer">
+  <div class="stamp-inner">
+    <div class="stamp-qmark">"</div>
+    <p class="stamp-text">The goal is simple: to create a predictable, reliable standard of comfort and pain management for every child, in every setting, every time.</p>
+    <div class="stamp-footer">
+      <div class="stamp-line"></div>
+      <span class="stamp-attr">Physician</span>
+      <div class="stamp-line"></div>
     </div>
   </div>
 </div>
