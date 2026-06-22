@@ -1,11 +1,12 @@
 <style>
+  body { background: #ffffff; margin: 0; padding: 8px; }
   .skip-nav { font-family: -apple-system, 'Segoe UI', sans-serif; padding: 1rem 0; }
   .skip-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; display: flex; flex-direction: column; min-height: 620px; }
   .skip-card-img { width: 100%; height: 140px; object-fit: cover; object-position: center top; display: block; }
   .skip-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
   .skip-card-title { font-size: 17px; font-weight: 600; color: #1a1a1a; line-height: 1.3; margin: 0; }
+  .skip-chip { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.03em; padding: 4px 10px; border-radius: 20px; background: #fdf0ea; color: #a0522d; white-space: nowrap; border: 1px solid #f0c4a8; }
   .skip-desc { font-size: 13px; color: #555; line-height: 1.6; margin: 0; }
-  .skip-recommend { display: inline-flex; font-size: 11px; font-weight: 600; color: #a0522d; background: #fdf0ea; border: 1px solid #f0c4a8; border-radius: 20px; padding: 4px 10px; margin: 0; }
   .skip-divider { height: 1px; background: #e5e5e5; }
   .skip-list-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #999; margin: 0 0 8px; }
   .skip-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
@@ -21,7 +22,7 @@
     <div class="skip-card-body">
       <p class="skip-card-title">Implementation Phases</p>
       <p class="skip-desc">If you want to follow a step-by-step process for implementation planning, this entry point walks you through eight implementation phases.</p>
-      <p class="skip-recommend">★ We recommend starting here</p>
+      <div><span class="skip-chip">★ We recommend starting here</span></div>
       <div class="skip-divider"></div>
       <p class="skip-list-label">What you'll find</p>
       <ul class="skip-list">
